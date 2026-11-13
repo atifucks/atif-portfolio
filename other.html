@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Atif Khan | Personal Portfolio</title>
+
+    <meta name="description" content="I'm Atif Khan from Delhi, India. Exploring web development, business analytics, content creation and entrepreneurship.">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #101010;
+            color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+            border-bottom: 1px solid #292929;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #aaa;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #b4f36b;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 580px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 0;
+        }
+
+        .tag {
+            color: #b4f36b;
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 9vw, 95px);
+            line-height: 1.05;
+            letter-spacing: -5px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #b4f36b;
+        }
+
+        .hero p {
+            color: #aaa;
+            max-width: 550px;
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #b4f36b;
+            color: #101010;
+            padding: 13px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            width: fit-content;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 0;
+            border-top: 1px solid #292929;
+        }
+
+        .section-label {
+            color: #b4f36b;
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 35px;
+            letter-spacing: -1px;
+        }
+
+        /* ABOUT */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .about-content p {
+            color: #aaa;
+            font-size: 16px;
+        }
+
+        .info {
+            border-top: 1px solid #333;
+        }
+
+        .info div {
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .info span:first-child {
+            color: #888;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .skill-card {
+            padding: 30px;
+            background: #191919;
+            border: 1px solid #292929;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: #b4f36b;
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 12px;
+            font-size: 19px;
+        }
+
+        .skill-card p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .number {
+            color: #b4f36b;
+            font-size: 13px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* PROJECTS */
+        .project {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 0;
+            border-bottom: 1px solid #333;
+            gap: 20px;
+        }
+
+        .project h3 {
+            font-size: 23px;
+        }
+
+        .project p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .project span {
+            color: #b4f36b;
+            white-space: nowrap;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            background: #191919;
+            padding: 50px;
+            border-radius: 8px;
+            border: 1px solid #292929;
+        }
+
+        .contact-box h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .contact-box p {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin-top: 25px;
+            margin-right: 25px;
+            color: #b4f36b;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            color: white;
+        }
+
+        .email-text {
+            color: #888;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 30px 0;
+            color: #777;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 700px) {
+
+            .container {
+                width: 90%;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .contact-box {
+                padding: 30px;
+            }
+
+            .contact-box h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <div class="container">
+        <nav>
+            <div class="logo">ATIF.</div>
+
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="container hero">
+
+        <div class="tag">Portfolio / 2026</div>
+
+        <h1>
+            Hey, I'm Atif.<br>
+            I build. I create.<br>
+            <span>I evolve.</span>
+        </h1>
+
+        <p>
+            A curious mind from Delhi, interested in technology,
+            business, creativity and personal growth.
+            Always learning, building and exploring new possibilities.
+        </p>
+
+        <a href="#projects" class="btn">Explore my work ↗</a>
+
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+
+            <div class="section-label">01 / ABOUT ME</div>
+
+            <h2 class="section-title">A little about myself.</h2>
+
+            <div class="about-content">
+
+                <p>
+                    I'm Atif Khan, a 22-year-old from Delhi, India.
+
+                    My interests sit at the intersection of technology,
+                    business and creativity.
+
+                    I enjoy building digital experiences, understanding
+                    business data, creating content and challenging
+                    myself through MMA.
+
+                    I believe in learning by doing and constantly
+                    improving my skills.
+                </p>
+
+                <div class="info">
+
+                    <div>
+                        <span>Name</span>
+                        <span>Atif Khan</span>
+                    </div>
+
+                    <div>
+                        <span>Location</span>
+                        <span>Delhi, India</span>
+                    </div>
+
+                    <div>
+                        <span>Age</span>
+                        <span>22</span>
+                    </div>
+
+                    <div>
+                        <span>German</span>
+                        <span>B2 Level</span>
+                    </div>
+
+                    <div>
+                        <span>Interests</span>
+                        <span>Tech / Business / MMA</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <div class="container">
+
+            <div class="section-label">02 / WHAT I DO</div>
+
+            <h2 class="section-title">Skills & Interests.</h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <span class="number">01</span>
+                    <h3>Web Development</h3>
+                    <p>
+                        Building websites and exploring digital
+                        experiences using web technologies.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="number">02</span>
+                    <h3>Business Analytics</h3>
+                    <p>
+                        Interested in data, business insights,
+                        analytical thinking and decision-making.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="number">03</span>
+                    <h3>Content Creation</h3>
+                    <p>
+                        Digital content, storytelling,
+                        social media and personal branding.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="number">04</span>
+                    <h3>German Language</h3>
+                    <p>
+                        German language proficiency at B2 level.
+                        Interested in international opportunities.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="number">05</span>
+                    <h3>Mixed Martial Arts</h3>
+                    <p>
+                        Passionate about MMA, discipline,
+                        fitness and continuous learning.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="number">06</span>
+                    <h3>Entrepreneurship</h3>
+                    <p>
+                        Exploring business ideas, marketing,
+                        branding and building something of my own.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <div class="container">
+
+            <div class="section-label">03 / SELECTED WORK</div>
+
+            <h2 class="section-title">Things I'm building.</h2>
+
+            <div class="project">
+                <div>
+                    <h3>Personal Brand</h3>
+                    <p>Social Media / Storytelling / Content</p>
+                </div>
+                <span>01 ↗</span>
+            </div>
+
+            <div class="project">
+                <div>
+                    <h3>Web Development</h3>
+                    <p>Websites / HTML / CSS / Learning</p>
+                </div>
+                <span>02 ↗</span>
+            </div>
+
+            <div class="project">
+                <div>
+                    <h3>Business Projects</h3>
+                    <p>Entrepreneurship / Marketing / Strategy</p>
+                </div>
+                <span>03 ↗</span>
+            </div>
+
+            <p style="color:#777; margin-top:25px; font-size:13px;">
+                More projects coming soon.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+
+            <div class="contact-box">
+
+                <div class="section-label">04 / GET IN TOUCH</div>
+
+                <h2>Have something<br>in mind?</h2>
+
+                <p>
+                    I'm always open to interesting conversations,
+                    collaborations and new opportunities.
+                </p>
+
+                <a href="mailto:heyiamatif@gmail.com" class="btn">
+                    Email Me ↗
+                </a>
+
+                <br>
+
+                <a
+                    href="https://www.instagram.com/atif.ucks"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link">
+                    Instagram ↗
+                </a>
+
+                <p class="email-text">
+                    heyiamatif@gmail.com
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            © 2026 Atif Khan. All rights reserved.
+            <br>
+            Built with HTML & CSS.
+        </div>
+    </footer>
+
+</body>
+</html>
